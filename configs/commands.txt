@@ -1,0 +1,37 @@
+#list keyspaces
+
+Describe keyspaces;
+SELECT * FROM system_schema.keyspaces;
+
+#list tables
+
+use <keyspacename>;
+describe tables;
+
+#show contents in tables
+select * from <table name>
+
+#create keyspace
+create keyspace events_keyspace with replication = {'class':'SimpleStrategy','replication_factor':1};
+
+
+7199 - JMX (was 8080 pre Cassandra 0.8.xx)
+7000 - Internode communication (not used if TLS enabled)
+7001 - TLS Internode communication (used if TLS enabled)
+9160 - Thrift client API
+9042 - CQL native transport port
+
+(eventname text, event_creationTimestamp date, kind text,namespace text,name text,message text,reason text,firstTimestamp date,lastTimestamp date,type text  PRIMARY KEY (event_creationTimestamp, eventname))
+             'eventname' : item['metadata']['name'],
+             'event_creationTimestamp': item['metadata']['creationTimestamp'],
+             'kind' : item['involvedObject']['kind'],
+             'namespace':item['involvedObject']['namespace'],
+             'name':item['involvedObject']['name'],
+             'message':item['message'],
+             'reason':item['reason'],
+             'firstTimestamp':item['firstTimestamp'],
+             'lastTimestamp':item['lastTimestamp'],
+             'type':item['type']
+
+
+
