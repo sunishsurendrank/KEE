@@ -24,4 +24,4 @@ Extended: Extend the above application to handle the events across multiple clus
 
 ## Deployment Architecture
 
-![image](/docs/pictures/deployment_architecture .png)
+![image](/docs/pictures/deployment_architecture.png)
