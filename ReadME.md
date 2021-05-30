@@ -45,3 +45,7 @@
 
  Event Query Microservice(Python) : /event_query/
 
+ Note: Only two of the microservice development is done.Also consider this as a draft copy.
+
+ 
+
