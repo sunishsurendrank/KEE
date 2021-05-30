@@ -1,0 +1,20 @@
+#MultiStage DockerFile
+
+
+FROM golang:alpine AS builder
+
+WORKDIR /go/src/app
+
+COPY /main.go .
+
+RUN go get "github.com/gocql/gocql"
+
+RUN go build -o event_manager .
+
+FROM alpine
+
+WORKDIR /app
+
+COPY --from=builder /go/src/app/event_manager /app/
+
+CMD ["./event_manager"]

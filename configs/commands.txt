@@ -1,3 +1,10 @@
+# creating env variable in windows
+
+[environment]::SetEnvironmentVariable('CASSANDRA_SERVER', '10.157.50.15:9042', 'Machine')
+[environment]::SetEnvironmentVariable('EVENT_QUERY_SERVICE', "http://127.0.0.1:5000/events", 'Machine')
+
+
+
 #list keyspaces
 
 Describe keyspaces;
